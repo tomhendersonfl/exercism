@@ -6,17 +6,15 @@
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
-
-if (input.substring(input.length) = "?") {
-  return "Sure."
-} else {
-  if (input.substring(input.length) = "!") {
-    return "Whoa, chill out!"
-  } else {
-
+  if (input.trim().length === 0) {
+    return "Fine. Be that way!";
   }
+  if (/[a-z]/i.test(input) && input === input.toUpperCase() ) {
+    return "Whoa, chill out!";
+  }
+  if (input.substring(input.length-1) === "?") {
+    return "Sure.";
+  }
+  return "Whatever."
 }
-
-};
-
 module.exports = Bob;
